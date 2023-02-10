@@ -1,0 +1,6 @@
+staffNo,fullName,department,role,email,salary
+1234,Daniel,SS,Lecturer,dan@ss.org,6000
+3524,Sam,DA,Cook,sam@ss.org,5000
+4332,Ben,SS,Cleaner,ben@ss.org,4000
+3292,Raj,SS,Professor,raj@ss.org,12000
+2332,Lim,DA,Admin,lim@ss.org,5000
