@@ -12,6 +12,7 @@ import main.java.app.Employee;
 import main.java.app.EmployeeService;
 import main.java.app.FileService;
 import main.java.app.IdiomService;
+import main.java.app.ProfileService;
 
 /**
  * Hello world!
@@ -59,35 +60,34 @@ public final class App {
     IdiomService is = new IdiomService();
     List<String> idioms = new ArrayList<String>();
 
+    ProfileService ps = new ProfileService();
+
     while (!consoleInput.equalsIgnoreCase("Q")) {
       displayMenu();
       consoleInput = console.readLine("Which action do you want to perform? ");
 
       try {
         switch (consoleInput) {
-          case "1": {
+          case "1":
             CSVExample();
             break;
-          }
-          case "2": {
+          case "2":
             idioms = is.readFile(idiomFullPath);
             break;
-          }
-          case "3": {
+          case "3":
             is.getRandom(idioms);
             break;
-          }
-          case "4": {
+          case "4":
             is.showAll(idioms);
             break;
-          }
-          case "Q": {
+          case "5":
+            ps.readFile();
+            break;
+          case "Q":
             System.out.println("Goodbye. ");
             break;
-          }
-          default: {
+          default:
             break;
-          }
         }
       } catch (Exception e) {
         e.printStackTrace();
@@ -146,6 +146,7 @@ public final class App {
     message("2: Read idioms.");
     message("3: Pick a random idiom.");
     message("4: List all idioms.");
+    message("5: Count given word in a profile.");
     message("Q: Quit the program.");
     message("——————————————————————————————————————————————————————————————————————————————————————————");
   }
